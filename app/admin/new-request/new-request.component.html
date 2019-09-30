@@ -1,0 +1,44 @@
+<div class="card-footer">
+    <div class="col-lg-12 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>ContactNo</th>
+                    <th>DOB</th>
+                    <th>Address</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>PIN</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Customer of allCustomer|async">
+                    <td>{{Customer.CustomerID}}</td>
+                    <td>{{Customer.Name}}</td>
+                    <td>{{Customer.Email}}</td>
+                    <td>{{Customer.ContactNo}}</td>
+                    <td>{{Customer.DOB}}</td>
+                    <td>{{Customer.Address}}</td>
+                    <!-- <td>{{Customer.AadhaarNo}}</td>  -->
+                    <td>{{Customer.Street}}</td>
+                    <td>{{Customer.city}}</td>
+                    <td>{{Customer.State}}</td>
+                    <td>{{Customer.PIN}}</td>
+
+                    <td>
+                        <!-- <button type="button" class="btn btn-primary mr-1" (click)="StudentEdit(Student.Id)">Edit</button>   -->
+                        <button type="button" class="btn btn-danger mr-1"
+                            (click)="DeleteCustomer(Customer.CustomerID)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+            <button type="button" class="btn btn-danger mr-1" (click)="getallcustomer()">GetData</button>
+            <button type="button" class="btn btn-danger mr-1" (click)="Back()">Back</button>
+        </table>
+    </div>
+</div>

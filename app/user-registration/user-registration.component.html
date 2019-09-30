@@ -1,0 +1,211 @@
+<app-header></app-header>
+
+<!-- <div class="container" style="padding-top:40px;">  
+        <div class="row">  
+          <div class="col-md-6 mx-auto">  
+            <div class="card mx-4">  
+              <div class="card-body p-4">  
+                <form [formGroup]="userRegistrationForm" >  
+                  <h1 style="text-align:center">Enquiry</h1> 
+                  <div class="input-group mb-3">  
+                    <input type="text" class="form-control" placeholder="Fullname" required="required" formControlName="Name"> 
+                  </div>  
+                 
+                  <div class="input-group mb-4">  
+                    <input type="text" class="form-control" placeholder="Email"  formControlName="Email">  
+                  </div>  
+                  <div class="input-group mb-4">  
+                    <input type="text" class="form-control" placeholder="Contact No"  formControlName="ContactNo">  
+                  </div>  
+                 
+                  <div>
+                  <button type="submit" class="btn btn-block btn-success" (click)="onRegister(userRegistrationForm.value)">Register</button>  
+                  <button type="submit" class="btn btn-block btn-success" (click)="Back()">Back</button>  
+
+                  </div>
+                </form>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  -->
+
+
+
+<div class="container">
+  <form [formGroup]="userRegistrationForm" (ngSubmit)="onRegister(userRegistrationForm.value)">
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3 style="text-align: center;color:crimson">Inquiry Form</h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="form-group form-row" [ngClass]="{'has-error':userRegistrationForm.get('Firstname').errors &&
+            (userRegistrationForm.get('Firstname').touched||userRegistrationForm.get('Firstname').dirty)}">
+          <label for="Firstname" class="text-info">Firstname:</label><br>
+          <input type="text" formControlName="Firstname" class="form-control" class="form-control">
+          <span class="help-block" *ngIf="userRegistrationForm.get('Firstname').errors &&
+              (userRegistrationForm.get('Firstname').touched||userRegistrationForm.get('Firstname').dirty)">
+            <span *ngIf="userRegistrationForm.get('Firstname').errors.required">
+              required!!!
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-group form-row" [ngClass]="{'has-error':userRegistrationForm.get('Middlename').errors &&
+            (userRegistrationForm.get('Middlename').touched||userRegistrationForm.get('Middlename').dirty)}">
+          <label for="Middlename" class="text-info">Middlename:</label><br>
+          <input type="text" formControlName="Middlename" class="form-control" class="form-control">
+          <span class="help-block" *ngIf="userRegistrationForm.get('Middlename').errors &&
+              (userRegistrationForm.get('Middlename').touched||userRegistrationForm.get('Middlename').dirty)">
+            <span *ngIf="userRegistrationForm.get('Middlename').errors.required">
+              required!!!
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group form-row" [ngClass]="{'has-error':userRegistrationForm.get('Lastname').errors &&
+                (userRegistrationForm.get('Lastname').touched||userRegistrationForm.get('Lastname').dirty)}">
+          <label for="Lastname" class="text-info">Lastname:</label><br>
+          <input type="text" formControlName="Lastname" class="form-control" class="form-control">
+          <span class="help-block" *ngIf="userRegistrationForm.get('Lastname').errors &&
+                  (userRegistrationForm.get('Lastname').touched||userRegistrationForm.get('Lastname').dirty)">
+            <span *ngIf="userRegistrationForm.get('Lastname').errors.required">
+              required!!!
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="form-group form-row" [ngClass]="{'has-error':userRegistrationForm.get('Email').errors &&
+                    (userRegistrationForm.get('Email').touched||userRegistrationForm.get('Email').dirty)}">
+              <label for="Email" class="text-info">Email:</label><br>
+              <input type="text" formControlName="Email" class="form-control" class="form-control">
+              <span class="help-block" *ngIf="userRegistrationForm.get('Email').errors &&
+                      (userRegistrationForm.get('Email').touched||userRegistrationForm.get('Email').dirty)">
+                <span *ngIf="userRegistrationForm.get('Email').errors.required">
+                  required!!!
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div class="form-group form-row" [ngClass]="{'has-error':userRegistrationForm.get('ContactNo').errors &&
+                      (userRegistrationForm.get('ContactNo').touched||userRegistrationForm.get('ContactNo').dirty)}">
+                <label for="ContactNo" class="text-info">ContactNo:</label><br>
+                <input type="text" formControlName="ContactNo" class="form-control" class="form-control">
+                <span class="help-block" *ngIf="userRegistrationForm.get('ContactNo').errors &&
+                        (userRegistrationForm.get('ContactNo').touched||userRegistrationForm.get('ContactNo').dirty)">
+                  <span *ngIf="userRegistrationForm.get('ContactNo').errors.required">
+                    required!!!
+                  </span>
+                </span>
+              </div>
+            </div>
+      
+      <div class="col-md-4">
+        <div class="form-group">
+          <label>Policy Name</label>
+          <select class="form-control" formControlName="PolicyMasterID">
+            <!-- <option [value]="null">select</option> -->
+            <option value="1">Policy 1</option>
+            <option value="2">Policy 2</option>
+            <option value="3">Policy 3</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <button class="btn btn-success">Register</button>&nbsp;&nbsp;
+        <button type="reset" class="btn btn-danger">Reset</button>
+      </div>
+    </div>
+  </form>
+
+
+</div>
+
+
+
+      
+
+
+      <!-- <div class="container contact-form">
+          <form [formGroup]="userRegistrationForm" (ngSubmit)="onRegister()">
+              <h3>Drop Us a Message</h3>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <input type="text" class="form-control" formControlName="Firstname" placeholder="Firstname *" required>
+                          <span *ngIf="isSubmitted && Firstname.invalid && Firstname.errors.required" class="text-danger">
+                                  Name is required.
+                                 </span>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" formControlName="Middlename" placeholder="Middlename *" required>
+                          <span *ngIf="isSubmitted && Middlename.invalid && Middlename.errors.required" class="text-danger">
+                              Middlename is required.
+                                 </span>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" formControlName="Lastname" placeholder="Lastname *" required>
+                          <span *ngIf="isSubmitted && Lastname.invalid && Lastname.errors.required" class="text-danger">
+                              Lastname is required.
+                                 </span>
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" formControlName="Email" placeholder="Email *" required>
+                          <span *ngIf="isSubmitted && Email.invalid && Email.errors.required" class="text-danger">
+                           Email is required.
+                          </span>
+                          <span *ngIf="isSubmitted && Email.invalid && Email.errors.Email" class="text-danger">
+                                  Email is incorrect.
+                                 </span>
+                      </div>
+
+                      <div class="form-group">
+      
+                          <input type="text" class="form-control " formControlName="ContactNo" placeholder="ContactNo *" required>
+                          <span *ngIf="isSubmitted && ContactNo.invalid && ContactNo.errors.required" class="text-danger">
+                                  Phone no is required.
+                                 </span>
+                          <span *ngIf="isSubmitted && ContactNo.invalid && ContactNo.errors?.minlength" class="text-danger">
+                                      Phone no must be 10 digits.
+                                     </span>
+                      </div>
+
+                       <div class="col-md-4">
+                <div class="form-group">
+                    <!-- <label>Policy Name</label> -->
+                    <!-- <select class="form-control" formControlName="PoicyMasterID" placeholder="Policy Name">
+                        <option value="1">Policy 1</option>
+                        <option value="2">Policy 2</option>
+                        <option value="3">Policy 3</option>
+                    </select>
+                </div>
+            </div>
+                      <div class="form-group">
+                          <button type="submit" class="btnContact" style="color: darkgreen">Submit</button>
+      
+                      </div>
+              </div>
+              </div>
+          </form>
+      </div> --> -->

@@ -1,0 +1,63 @@
+
+<app-header></app-header>
+
+<!-- <section class="login-block bg-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 login-sec">
+                    <h2 class="text-center">contact us</h2>
+                    <form class="login-form" [formGroup]="contactUsForm">
+                        <div class="form-group">
+                            <label class="text-uppercase">Full Name *</label>
+                            <input type="text" class="form-control" formControlName="Fullname">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Email *</label>
+                            <input type="text" class="form-control" formControlName="Email">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Phone Number *</label>
+                            <input type="number" class="form-control" formControlName="PhoneNumber">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-uppercase">Message</label>
+                            <textarea class="form-control" formControlName="Message" rows="3"></textarea>
+                        </div>
+                        <button  type="submit" class="btn btn-login float-right" style="background-color:lightgreen" (click) = onContactUsSubmit(this.contactUsForm)>Submit</button>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </section> -->
+
+
+    <div class="container" style="padding-top:40px;">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card mx-4">
+              <div class="card-body p-4">
+                <form [formGroup]="contactUsform">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Fullname" formControlName="FullName">
+                  </div>
+                  <div class="input-group mb-4">
+                    <input type="email" class="form-control" placeholder="Email" formControlName="Email">
+                  </div>
+                  <div class="input-group mb-4">
+                    <input type="number" class="form-control" placeholder="PhoneNumber" formControlName="PhoneNumber">
+                  </div>
+                  <div class="input-group mb-3">
+                    <!-- <input type="text" class="form-control" placeholder="Message"  formControlName="Message"> -->
+                    <textarea class="form-control" placeholder="Message" formControlName="Message" rows="3"></textarea>
+
+                  </div>
+                  <button type="submit" class="btn btn-block btn-success" (click)="onContactUsSubmit(contactUsform.value)">Submit</button>
+                  <button type="submit" class="btn btn-block btn-success" (click)="Back()">Back</button>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

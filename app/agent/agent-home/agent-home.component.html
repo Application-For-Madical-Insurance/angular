@@ -1,0 +1,52 @@
+<app-agent-header></app-agent-header>
+<div class="card-footer">
+    <div class="col-lg-12 table-responsive">
+        <h1>Customer List</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fullname</th>
+                    <th>Middlename</th>
+                    <th>Lastname</th>
+                    <!-- <th>Fullname</th> -->
+                    <th>ContactNo</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allCustomer|async">
+                    <td>{{user.EnquiryID}}</td>
+                    <td>{{user.Firstname}}</td>
+                    <td>{{user.Middlename}}</td>
+                    <td>{{user.Lastname}}</td>
+                    <td>{{user.ContactNo}}</td>
+                    <td>{{user.Email}}</td>
+                    <!-- <td>{{user.PolicyMasterID}}</td> -->                  
+                    <td>
+                        <button type="button" class="btn btn-danger mr-1"
+                            (click)="DeleteCustomer(user.EnquiryID)">Register</button>
+                        <!-- <button type="button" class="btn btn-primary mr-1" (click)="StudentEdit(Student.Id)">Register</button>   -->
+
+                    </td>
+
+                    <!-- <td>  
+                          <button type="button" class="btn btn-primary mr-1" (click)="StudentEdit(Student.Id)">Edit</button>  
+                          <button type="button" class="btn btn-danger mr-1" (click)="DeleteStudent(Student.Id)">Delete</button>  
+                      </td>   -->
+
+                </tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+    <!-- <button type="submit" class="btn btn-block btn-success" (click)="GetInquiry()">Refresh</button> -->
+
+    <button type="submit" class="btn btn-block btn-success" (click)="Back()">Back to Dashboard</button>
+
+
+</div>

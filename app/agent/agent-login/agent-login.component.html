@@ -1,0 +1,21 @@
+<!-- <app-header></app-header> -->
+<div class="container" style="padding-top:40px;">  
+        <div class="row">  
+          <div class="col-md-6 mx-auto">  
+            <div class="card mx-4">  
+              <div class="card-body p-4">  
+                <form [formGroup]="agentLoginForm" >  
+                  <h1 style="text-align:center">Agent Login</h1> 
+                  <div class="input-group mb-3">  
+                    <input type="email" class="form-control" placeholder="email"  formControlName="email"> 
+                  </div>  
+                  <div class="input-group mb-3">  
+                    <input type="password" class="form-control" placeholder="password"  formControlName="password">  
+                  </div>  
+                  <button type="submit" class="btn btn-block btn-success" (click)="onLogin()">Login</button>
+                </form>  
+              </div>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  

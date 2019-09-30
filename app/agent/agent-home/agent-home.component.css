@@ -1,0 +1,23 @@
+/* div {
+    border: 1px solid black;
+    /* margin-left: 160px; */
+    /* position: relative; */
+    /* background-color: lightgray; */
+    /* margin-left: 160px; */
+  /* } */ 
+
+  .button {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px
+}
+
+.small-btn {
+    width: 50px;
+    height: 25px;
+}
+

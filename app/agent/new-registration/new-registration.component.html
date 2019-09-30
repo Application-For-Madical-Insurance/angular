@@ -1,0 +1,297 @@
+<!-- <app-agent-dashboard></app-agent-dashboard> -->
+<app-agent-header></app-agent-header>
+
+
+
+<div class="container">
+    <form [formGroup]="finalRegistrationForm" (ngSubmit)="onSubmit(finalRegistrationForm.value)">
+  
+  
+      <div class="row">
+        <div class="col-md-12">
+          <h3 style="text-align: center;color:crimson">Registration Form</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+              <p style="font-size: 20px;color: darkblue;text-align: center;background: blanchedalmond;">Personal
+                  Information</p>
+          </div>
+      </div>
+  
+  
+      <div class="row">
+  
+        <div class="col-md-4">
+          <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('Firstname').errors &&
+              (finalRegistrationForm.get('Firstname').touched||finalRegistrationForm.get('Firstname').dirty)}">
+            <label for="Firstname" class="text-info">Firstname:</label><br>
+            <input type="text" formControlName="Firstname" class="form-control" class="form-control">
+            <span class="help-block" *ngIf="finalRegistrationForm.get('Firstname').errors &&
+                (finalRegistrationForm.get('Firstname').touched||finalRegistrationForm.get('Firstname').dirty)">
+              <span *ngIf="finalRegistrationForm.get('Firstname').errors.required">
+                required!!!
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('Middlename').errors &&
+              (finalRegistrationForm.get('Middlename').touched||finalRegistrationForm.get('Middlename').dirty)}">
+            <label for="Middlename" class="text-info">Middlename:</label><br>
+            <input type="text" formControlName="Middlename" class="form-control" class="form-control">
+            <span class="help-block" *ngIf="finalRegistrationForm.get('Middlename').errors &&
+                (finalRegistrationForm.get('Middlename').touched||finalRegistrationForm.get('Middlename').dirty)">
+              <span *ngIf="finalRegistrationForm.get('Middlename').errors.required">
+                required!!!
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('Lastname').errors &&
+                  (finalRegistrationForm.get('Lastname').touched||finalRegistrationForm.get('Lastname').dirty)}">
+            <label for="Lastname" class="text-info">Lastname:</label><br>
+            <input type="text" formControlName="Lastname" class="form-control" class="form-control">
+            <span class="help-block" *ngIf="finalRegistrationForm.get('Lastname').errors &&
+                    (finalRegistrationForm.get('Lastname').touched||finalRegistrationForm.get('Lastname').dirty)">
+              <span *ngIf="finalRegistrationForm.get('Lastname').errors.required">
+                required!!!
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="row">
+  
+          <div class="col-md-4">
+              <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('Email').errors &&
+                      (finalRegistrationForm.get('Email').touched||finalRegistrationForm.get('Email').dirty)}">
+                <label for="Email" class="text-info">Email:</label><br>
+                <input type="text" formControlName="Email" class="form-control" class="form-control">
+                <span class="help-block" *ngIf="finalRegistrationForm.get('Email').errors &&
+                        (finalRegistrationForm.get('Email').touched||finalRegistrationForm.get('Email').dirty)">
+                  <span *ngIf="finalRegistrationForm.get('Email').errors.required">
+                    required!!!
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('ContactNo').errors &&
+                        (finalRegistrationForm.get('ContactNo').touched||finalRegistrationForm.get('ContactNo').dirty)}">
+                  <label for="ContactNo" class="text-info">ContactNo:</label><br>
+                  <input type="text" formControlName="ContactNo" class="form-control" class="form-control">
+                  <span class="help-block" *ngIf="finalRegistrationForm.get('ContactNo').errors &&
+                          (finalRegistrationForm.get('ContactNo').touched||finalRegistrationForm.get('ContactNo').dirty)">
+                    <span *ngIf="finalRegistrationForm.get('ContactNo').errors.required">
+                      required!!!
+                    </span>
+                  </span>
+                </div>
+              </div>
+        
+        <!-- <div class="col-md-4">
+          <div class="form-group">
+            <label>Policy Name</label>
+            <select class="form-control" formControlName="PolicyMasterID">
+              <option [value]="null">select</option>
+              <option value="1">Policy 1</option>
+              <option value="2">Policy 2</option>
+              <option value="3">Policy 3</option>
+            </select>
+          </div>
+        </div> -->
+        <div class="col-md-4">
+            <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('DOB').errors &&
+                    (finalRegistrationForm.get('DOB').touched||finalRegistrationForm.get('DOB').dirty)}">
+              <label for="DOB" class="text-info">DOB:</label><br>
+              <input type="date" formControlName="DOB" class="form-control" class="form-control">
+              <span class="help-block" *ngIf="finalRegistrationForm.get('DOB').errors &&
+                      (finalRegistrationForm.get('DOB').touched||finalRegistrationForm.get('DOB').dirty)">
+                <span *ngIf="finalRegistrationForm.get('DOB').errors.required">
+                  required!!!
+                </span>
+              </span>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-4">
+              <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('Address').errors &&
+                      (finalRegistrationForm.get('Address').touched||finalRegistrationForm.get('Address').dirty)}">
+                <label for="Address" class="text-info">Address:</label><br>
+                <input type="text" formControlName="Address" class="form-control" class="form-control">
+                <span class="help-block" *ngIf="finalRegistrationForm.get('Address').errors &&
+                        (finalRegistrationForm.get('Address').touched||finalRegistrationForm.get('Address').dirty)">
+                  <span *ngIf="finalRegistrationForm.get('Address').errors.required">
+                    required!!!
+                  </span>
+                </span>
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('Street').errors &&
+                        (finalRegistrationForm.get('Street').touched||finalRegistrationForm.get('Street').dirty)}">
+                  <label for="Street" class="text-info">Street:</label><br>
+                  <input type="text" formControlName="Street" class="form-control" class="form-control">
+                  <span class="help-block" *ngIf="finalRegistrationForm.get('Street').errors &&
+                          (finalRegistrationForm.get('Street').touched||finalRegistrationForm.get('Street').dirty)">
+                    <span *ngIf="finalRegistrationForm.get('Street').errors.required">
+                      required!!!
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+
+              <div class="col-md-4">
+                  <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('City').errors &&
+                          (finalRegistrationForm.get('City').touched||finalRegistrationForm.get('City').dirty)}">
+                    <label for="City" class="text-info">City:</label><br>
+                    <input type="text" formControlName="City" class="form-control" class="form-control">
+                    <span class="help-block" *ngIf="finalRegistrationForm.get('City').errors &&
+                            (finalRegistrationForm.get('City').touched||finalRegistrationForm.get('City').dirty)">
+                      <span *ngIf="finalRegistrationForm.get('City').errors.required">
+                        required!!!
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('State').errors &&
+                            (finalRegistrationForm.get('State').touched||finalRegistrationForm.get('State').dirty)}">
+                      <label for="State" class="text-info">State:</label><br>
+                      <input type="text" formControlName="State" class="form-control" class="form-control">
+                      <span class="help-block" *ngIf="finalRegistrationForm.get('State').errors &&
+                              (finalRegistrationForm.get('State').touched||finalRegistrationForm.get('State').dirty)">
+                        <span *ngIf="finalRegistrationForm.get('State').errors.required">
+                          required!!!
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                <div class="col-md-4">
+                    <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('PIN').errors &&
+                            (finalRegistrationForm.get('PIN').touched||finalRegistrationForm.get('PIN').dirty)}">
+                      <label for="PIN" class="text-info">PIN:</label><br>
+                      <input type="number" formControlName="PIN" class="form-control" class="form-control">
+                      <span class="help-block" *ngIf="finalRegistrationForm.get('PIN').errors &&
+                              (finalRegistrationForm.get('PIN').touched||finalRegistrationForm.get('PIN').dirty)">
+                        <span *ngIf="finalRegistrationForm.get('PIN').errors.required">
+                          required!!!
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('AadharNo').errors &&
+                              (finalRegistrationForm.get('AadharNo').touched||finalRegistrationForm.get('AadharNo').dirty)}">
+                        <label for="AadharNo" class="text-info">Aadhaar:</label><br>
+                        <input type="number" formControlName="AadharNo" class="form-control" class="form-control">
+                        <span class="help-block" *ngIf="finalRegistrationForm.get('AadharNo').errors &&
+                                (finalRegistrationForm.get('AadharNo').touched||finalRegistrationForm.get('AadharNo').dirty)">
+                          <span *ngIf="finalRegistrationForm.get('AadharNo').errors.required">
+                            required!!!
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+      </div>
+   
+      <div class="row">
+          <div class="col-md-12">
+              <p style="font-size: 20px;color: darkblue;text-align: center;background: blanchedalmond;">Policy
+                  Information</p>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Policy Name</label>
+            <select class="form-control" formControlName="PolicyMasterID">
+              <option value="null">select</option>
+              <option value="1">Policy 1</option>
+              <option value="2">Policy 2</option>
+              <option value="3">Policy 3</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('SumAssured').errors &&
+                    (finalRegistrationForm.get('SumAssured').touched||finalRegistrationForm.get('SumAssured').dirty)}">
+              <label for="SumAssured" class="text-info">SumAssured:</label><br>
+              <input type="number" formControlName="SumAssured" class="form-control" class="form-control">
+              <span class="help-block" *ngIf="finalRegistrationForm.get('SumAssured').errors &&
+                      (finalRegistrationForm.get('SumAssured').touched||finalRegistrationForm.get('SumAssured').dirty)">
+                <span *ngIf="finalRegistrationForm.get('SumAssured').errors.required">
+                  required!!!
+                </span>
+              </span>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-12">
+              <p style="font-size: 20px;color: darkblue;text-align: center;background: blanchedalmond;">Bank
+                  Information</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('BankName').errors &&
+                      (finalRegistrationForm.get('BankName').touched||finalRegistrationForm.get('BankName').dirty)}">
+                <label for="BankName" class="text-info">BankName:</label><br>
+                <input type="text" formControlName="BankName" class="form-control" class="form-control">
+                <span class="help-block" *ngIf="finalRegistrationForm.get('BankName').errors &&
+                        (finalRegistrationForm.get('BankName').touched||finalRegistrationForm.get('BankName').dirty)">
+                  <span *ngIf="finalRegistrationForm.get('BankName').errors.required">
+                    required!!!
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group form-row" [ngClass]="{'has-error':finalRegistrationForm.get('ChequeNumber').errors &&
+                        (finalRegistrationForm.get('ChequeNumber').touched||finalRegistrationForm.get('ChequeNumber').dirty)}">
+                  <label for="ChequeNumber" class="text-info">ChequeNumber:</label><br>
+                  <input type="text" formControlName="ChequeNumber" class="form-control" class="form-control">
+                  <span class="help-block" *ngIf="finalRegistrationForm.get('ChequeNumber').errors &&
+                          (finalRegistrationForm.get('ChequeNumber').touched||finalRegistrationForm.get('ChequeNumber').dirty)">
+                    <span *ngIf="finalRegistrationForm.get('ChequeNumber').errors.required">
+                      required!!!
+                    </span>
+                  </span>
+                </div>
+              </div>
+      </div>
+      
+  
+
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+  
+          <button class="btn btn-success">Register</button>&nbsp;&nbsp;
+          <button type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger" (click) = "Back()">Back</button>
+          
+        </div>
+      </div>
+    </form>
+  
+  
+  </div>

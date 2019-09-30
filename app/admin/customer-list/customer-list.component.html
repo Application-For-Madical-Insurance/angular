@@ -1,0 +1,40 @@
+<app-admin-header></app-admin-header>
+<div class="card-footer">
+    <div class="col-lg-12 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>cid</th>
+                    <th>Fisrtname</th>
+                    <th>Middlename</th>
+                    <th>Lastname</th>    
+                    <th>ContactNo</th>
+                    <th>Email</th>
+                    
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Customer of allpolicyCustomer|async">
+                    <td>{{Customer.CustomerID}}</td>
+                    <td>{{Customer.FirstName}}</td>
+                    <td>{{Customer.MiddleName}}</td>
+                    <td>{{Customer.LastName}}</td>
+                    <td>{{Customer.ContactNo}}</td>
+                    <td>{{Customer.Email}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger mr-1"
+                            (click)="approvedCustomer(Customer.CustomerID)">Approve</button>
+                            <button type="button" class="btn btn-danger mr-1"
+                            (click)="viewCustomerDetails(Customer.CustomerID)">View</button>
+                    </td>
+                </tr>
+            </tbody>
+            <button type="button" class="btn btn-danger mr-1" (click)="getallcustomer()">GetData</button>
+            <button type="button" class="btn btn-danger mr-1" (click)="Back()">Back</button>
+
+
+        </table>
+    </div>
+</div>

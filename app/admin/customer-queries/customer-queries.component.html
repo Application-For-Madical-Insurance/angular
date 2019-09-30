@@ -1,0 +1,38 @@
+<app-admin-header></app-admin-header>
+
+<div class="card-footer">
+    <div class="col-lg-12 table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>ContactNo</th>
+                    <th>Message</th>
+                    
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Customer of allCustomerQueries|async">
+                    <!-- <td>{{Customer.ContactusID}}</td> -->
+                    <td>{{Customer.FullName}}</td>
+                    <td>{{Customer.Email}}</td>
+                    <td>{{Customer.PhoneNo}}</td>
+                    <td>{{Customer.Message}}</td>
+                    <td>
+                        <!-- <button type="button" class="btn btn-primary mr-1" (click)="StudentEdit(Student.Id)">Edit</button>   -->
+                        <!-- <button type="button" class="btn btn-danger mr-1" -->
+                            <!-- (click)="DeleteCustomer(Customer.CustomerID)">View</button> -->
+                    </td>
+                </tr>
+            </tbody>
+            <button type="button" class="btn btn-danger mr-1" (click)="getAllQueries()">GetData</button>
+            <button type="button" class="btn btn-danger mr-1" (click)="Back()">Back</button>
+
+
+        </table>
+    </div>
+</div>

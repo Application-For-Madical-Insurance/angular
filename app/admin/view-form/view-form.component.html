@@ -1,0 +1,118 @@
+<app-admin-header></app-admin-header>
+<div class="container">
+    <form class="form-login" [formGroup]="customerInfo">
+      <h2 class="form-login-heading">Your Personal Info</h2>
+      <div class="login-wrap">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="FirstName">FirstName</label>
+            <input type="text" formControlName="FirstName" class="form-control" id="Firstname "
+              value="{{CustomerInfo.FirstName}}" readonly />
+
+          </div>
+          <div class="form-group col-md-4">
+            <label for="MiddleName">Middle Name</label>
+            <input type="text" class="form-control" id="MiddleName" formControlName="Middlename"
+              value="{{CustomerInfo.MiddleName}}" readonly>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="LastName" formControlName="Lastname"
+              value="{{CustomerInfo.LastName}}" readonly>
+
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="DOB">DOB</label>
+            <input type="text" class="form-control" formControlName="DOB" id="DOB"
+              value="{{CustomerInfo.DOB| date: 'dd/MM/yyyy'}}" readonly>
+
+          </div>
+
+        </div>
+        <div class="form-row">
+          <label class="form-check-label">ContactNo</label>
+
+          <input type="text" class="form-control" id="ContactNo" formControlName="ContactNo" value="{{CustomerInfo.ContactNo}}"
+            readonly>
+        </div>
+        <br>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Email">Email</label>
+            <input type="number" class="form-control" id="Email" formControlName="Email"
+              value="{{CustomerInfo.Email}}" readonly>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="DOB">DOB</label>
+            <input type="DOB" class="form-control" id="DOB" formControlName="DOB" value="{{CustomerInfo.DOB}}"
+              readonly>
+
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Address">Address</label>
+            <input type="number" class="form-control" id="Address" formControlName="Address" value="{{CustomerInfo.Address}}"
+              readonly>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="Street">Street</label>
+            <input type="text" class="form-control" id="Street" formControlName="Street" value="{{CustomerInfo.Street}}"
+              readonly>
+
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" formControlName="city"
+              value="{{CustomerInfo.city}}" readonly>
+
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="State">State</label>
+            <input type="text" class="form-control" id="State" formControlName="State" value="{{CustomerInfo.State}}"
+              readonly>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="City">City</label>
+            <input type="text" class="form-control" id="City" formControlName="City" value="{{CustomerInfo.City}}"
+              readonly>
+
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="Pin">PIN</label>
+            <input type="number" class="form-control" id="PIN" formControlName="PIN" value="{{CustomerInfo.PIN}}"
+              readonly>
+
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="SumAssured">SumAssured</label>
+          <input type="text" class="form-control" id="SumAssured" formControlName="SumAssured"
+            value="{{CustomerInfo.SumAssured}}" readonly>
+
+        </div>
+      </div>
+
+    </form>
+  </div>
